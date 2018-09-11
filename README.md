@@ -35,14 +35,14 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 15. Select your masternode and click on **Start**
 16. Login to your VPS and check your masternode status by running the following command. If you get **Status 9**, it means your masternode is active.
 ```
-ragnarokd masternode status
+ragnarok-cli masternode status
 ```
 ***
 
 ## Usage:
 ```
-ragnarokd masternode status  
-ragnarokd getinfo
+ragnarok-cli masternode status  
+ragnarok-cli getinfo
 ```
 Also, if you want to check/start/stop **Ragna**, run one of the following commands as **root**:
 

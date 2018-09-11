@@ -4,13 +4,13 @@ TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='ragnarok.conf'
 CONFIGFOLDER='/root/.ragnarok'
 COIN_DAEMON='ragnarokd'
-COIN_CLI='ragnarokd'
+COIN_CLI='ragnarok-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/ragnaproject/Ragnarok/releases/download/2.0.0/Ragnarok-Linux.zip'
+COIN_TGZ='https://github.com/ragnaproject/Ragnarok/releases/download/2.0.1.0/Ragnarok-2.0.1.0-DAEMON.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Ragna'
-COIN_PORT=1232
-RPC_PORT=1233
+COIN_PORT=8853
+RPC_PORT=8854
 
 NODEIP=$(curl -s4 api.ipify.org)
 
@@ -26,7 +26,7 @@ function download_node() {
   wget -q $COIN_TGZ
   compile_error
   unzip $COIN_ZIP >/dev/null 2>&1
-  cp Ragnarok-Linux/$COIN_DAEMON $COIN_PATH
+  cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
@@ -124,16 +124,6 @@ listenonion=0
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-addnode=118.31.18.78
-addnode=153.218.0.251
-addnode=217.163.29.79
-addnode=91.198.212.148
-addnode=82.193.140.20
-addnode=180.253.57.222
-addnode=185.47.210.224
-addnode=172.58.43.245
-addnode=108.61.103.182
-addnode=100.7.40.56
 EOF
 }
 
