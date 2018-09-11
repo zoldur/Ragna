@@ -124,6 +124,10 @@ listenonion=0
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
+connect=178.128.207.233:8853
+connect=174.138.9.14:8853
+connect=174.138.14.163:8853
+connect=113.212.123.224:8853
 EOF
 }
 
